@@ -47,3 +47,7 @@
 .calendar-details p{font-size:12px;color:#69717c;line-height:1.8;margin:6px 0}
 .calendar-disclaimer{max-width:900px;margin:14px auto 0;font-size:10px;line-height:1.7;color:#858b94}
 @media(max-width:600px){.calendar-section{padding-top:70px;padding-bottom:70px}.calendar-panel{padding:12px}.calendar-weekdays,.calendar-days{gap:3px}.calendar-weekdays span{font-size:9px}.calendar-day{min-height:67px;padding:5px 3px}.calendar-day .day-number{font-size:11px}.day-event{font-size:8px;margin-top:5px}.calendar-toolbar h3{font-size:21px}.calendar-legend{gap:12px}.calendar-legend span{font-size:9px}}
+
+/* Botão de acesso rápido ao calendário na página inicial */
+.button-calendar{border:1px solid #c9a86a;color:#fff;background:transparent}.button-calendar:hover{background:#c9a86a;color:#101d31;transform:translateY(-2px)}
+@media(max-width:760px){.hero-actions{align-items:flex-start;flex-wrap:wrap;gap:12px}.hero-actions .text-link{width:100%;margin-top:6px}}
