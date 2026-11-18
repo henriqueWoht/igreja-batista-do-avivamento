@@ -92,6 +92,8 @@ if (calendarDays) {
         label.textContent = event.type === 'celula' ? 'Célula' : 'Culto'; cell.appendChild(label);
       });
       cell.setAttribute('aria-label', dateFormatter.format(date));
+      cell.addEventListener('mouseenter', () => showDetails(date));
+      cell.addEventListener('focus', () => showDetails(date));
       cell.addEventListener('click', () => { selectedDate = date; renderCalendar(); showDetails(date); });
       calendarDays.appendChild(cell);
     }
@@ -100,4 +102,17 @@ if (calendarDays) {
   document.getElementById('nextMonth').addEventListener('click', () => { shownMonth.setMonth(shownMonth.getMonth()+1); renderCalendar(); });
   renderCalendar();
   showDetails(selectedDate);
+}
+
+
+// Abre e fecha o painel do calendário, mantendo-o recolhido inicialmente.
+const calendarToggle = document.getElementById('calendarToggle');
+const calendarPopup = document.getElementById('calendarPopup');
+if (calendarToggle && calendarPopup) {
+  calendarToggle.addEventListener('click', () => {
+    const isOpening = calendarPopup.hidden;
+    calendarPopup.hidden = !isOpening;
+    calendarToggle.setAttribute('aria-expanded', String(isOpening));
+    calendarToggle.querySelector('.calendar-launch-arrow').textContent = isOpening ? '⌃' : '⌄';
+  });
 }
