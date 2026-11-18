@@ -105,14 +105,26 @@ if (calendarDays) {
 }
 
 
-// Abre e fecha o painel do calendário, mantendo-o recolhido inicialmente.
-const calendarToggle = document.getElementById('calendarToggle');
-const calendarPopup = document.getElementById('calendarPopup');
-if (calendarToggle && calendarPopup) {
-  calendarToggle.addEventListener('click', () => {
-    const isOpening = calendarPopup.hidden;
+// Abre e fecha o painel do calendário, com controle explícito de exibição.
+document.addEventListener('DOMContentLoaded', () => {
+  const calendarToggle = document.getElementById('calendarToggle');
+  const calendarPopup = document.getElementById('calendarPopup');
+  if (!calendarToggle || !calendarPopup) return;
+
+  calendarPopup.hidden = true;
+  calendarPopup.style.display = 'none';
+  calendarToggle.setAttribute('aria-expanded', 'false');
+
+  calendarToggle.addEventListener('click', (event) => {
+    event.preventDefault();
+    const isOpening = calendarPopup.style.display === 'none' || calendarPopup.hidden;
     calendarPopup.hidden = !isOpening;
+    calendarPopup.style.display = isOpening ? 'block' : 'none';
     calendarToggle.setAttribute('aria-expanded', String(isOpening));
-    calendarToggle.querySelector('.calendar-launch-arrow').textContent = isOpening ? '⌃' : '⌄';
+    const arrow = calendarToggle.querySelector('.calendar-launch-arrow');
+    if (arrow) arrow.textContent = isOpening ? '⌃' : '⌄';
+    if (isOpening) {
+      calendarPopup.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
   });
-}
+});
