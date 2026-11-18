@@ -69,6 +69,8 @@
 
     <section class="calendar-section section-wrap" id="calendario">
       <div class="section-heading"><div><span class="eyebrow dark">ORGANIZE SUA PARTICIPAÇÃO</span><h2>Calendário da <em>igreja</em></h2></div><p>Confira nossos encontros semanais<br>e acompanhe as programações especiais.</p></div>
+      <div class="calendar-launch-wrap"><button type="button" class="calendar-launch" id="calendarToggle" aria-expanded="false" aria-controls="calendarPopup"><span class="calendar-launch-icon">▦</span><span><strong>Abrir calendário</strong><small>Consulte os encontros e eventos da igreja</small></span><span class="calendar-launch-arrow">⌄</span></button></div>
+      <div class="calendar-popup" id="calendarPopup" hidden>
       <div class="calendar-panel">
         <div class="calendar-toolbar"><button type="button" class="calendar-nav" id="prevMonth" aria-label="Mês anterior">‹</button><h3 id="calendarMonth" aria-live="polite"></h3><button type="button" class="calendar-nav" id="nextMonth" aria-label="Próximo mês">›</button></div>
         <div class="calendar-weekdays"><span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span></div>
@@ -77,6 +79,7 @@
       </div>
       <div class="calendar-details" id="calendarDetails" aria-live="polite"><h3>Programação semanal</h3><p>Selecione uma data no calendário para consultar a programação.</p></div>
       <p class="calendar-disclaimer">Os eventos especiais serão divulgados nesta agenda quando forem cadastrados. Os horários das células são definidos pelos respectivos líderes.</p>
+      </div>
     </section>
 
     <section class="live-section section-wrap" id="ao-vivo">
