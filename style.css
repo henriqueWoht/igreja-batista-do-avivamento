@@ -11,3 +11,11 @@
 .live-content p{font-size:13px;line-height:1.8;color:#69717c;max-width:720px;margin:0}
 .live-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:18px}
 @media(max-width:760px){.live-section{padding-top:70px;padding-bottom:70px}.live-content{padding:25px 20px;align-items:flex-start;flex-direction:column}.live-actions{align-items:flex-start;flex-direction:column;gap:17px}}
+
+
+/* Player incorporado das transmissões ao vivo */
+.live-player{width:100%;max-width:900px;margin:0 auto;background:#0b1627;aspect-ratio:16/9;overflow:hidden;box-shadow:0 18px 45px #101d3120}
+.live-player iframe{width:100%;height:100%;display:block;border:0}
+.live-note{max-width:900px;margin:18px auto 0;color:#69717c;font-size:12px;line-height:1.8}
+.live-actions{max-width:900px;margin:20px auto 0;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+@media(max-width:760px){.live-player{width:100%;aspect-ratio:16/9}.live-actions{align-items:flex-start;flex-direction:column;gap:16px}}
